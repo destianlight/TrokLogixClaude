@@ -1,0 +1,24 @@
+# Build output
+bin/
+obj/
+publish/
+*.zip
+
+# Editors
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Secrets and local settings: never commit these
+appsettings.*.local.json
+*.pfx
+.env
+
+# Uploaded photos (stored on disk, not in the repository)
+uploads/
+
+# OS
+.DS_Store
+Thumbs.db

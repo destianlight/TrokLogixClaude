@@ -1,0 +1,213 @@
+/* TrokLogix site styles. Bootstrap 5.3.9 does the heavy lifting; this file adds the brand. */
+
+@font-face {
+    font-family: "Saira";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/saira-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Saira";
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url("../fonts/saira-latin-800-italic.woff2") format("woff2");
+}
+
+/* ---- Brand colours (light) ---- */
+:root,
+[data-bs-theme="light"] {
+    --tl-navy: #0B1F3A;
+    --tl-orange: #C2410C;          /* buttons: white text passes contrast */
+    --tl-orange-hover: #9A3412;
+    --tl-accent-text: #C2410C;     /* orange text on light backgrounds */
+    --tl-hero-bg: #EEF2F7;
+    --tl-chip-tint: #FFEDD5;
+    --tl-shadow: 0 10px 30px rgba(15, 23, 42, .12);
+    --bs-link-color: #C2410C;
+    --bs-link-color-rgb: 194, 65, 12;
+    --bs-link-hover-color: #9A3412;
+    --bs-link-hover-color-rgb: 154, 52, 18;
+}
+
+/* ---- Brand colours (dark) ---- */
+[data-bs-theme="dark"] {
+    --tl-accent-text: #FB923C;
+    --tl-hero-bg: #071426;
+    --tl-chip-tint: #3A1F0F;
+    --tl-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+    --bs-body-bg: #0B1220;
+    --bs-body-bg-rgb: 11, 18, 32;
+    --bs-tertiary-bg: #0F1B2E;
+    --bs-tertiary-bg-rgb: 15, 27, 46;
+    --bs-border-color: #1E3050;
+    --bs-link-color: #FB923C;
+    --bs-link-color-rgb: 251, 146, 60;
+    --bs-link-hover-color: #FDBA74;
+    --bs-link-hover-color-rgb: 253, 186, 116;
+}
+
+/* ---- Type ---- */
+.tl-display,
+.tl-h2 {
+    font-family: "Saira", system-ui, sans-serif;
+    font-weight: 700;
+    line-height: 1.08;
+}
+.tl-display { font-size: clamp(2.1rem, 5vw, 3.4rem); }
+.tl-h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+.tl-accent { color: var(--tl-accent-text); }
+.tl-eyebrow {
+    color: var(--tl-accent-text);
+    font-weight: 600;
+    font-size: .875rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/* ---- Header ---- */
+.tl-header { background: var(--tl-hero-bg); }
+.tl-brand {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: "Saira", system-ui, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.tl-mark { width: 36px; height: 36px; }
+
+/* ---- Buttons ---- */
+.btn-tl {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--tl-orange);
+    --bs-btn-border-color: var(--tl-orange);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--tl-orange-hover);
+    --bs-btn-hover-border-color: var(--tl-orange-hover);
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--tl-orange-hover);
+    --bs-btn-active-border-color: var(--tl-orange-hover);
+    --bs-btn-focus-shadow-rgb: 194, 65, 12;
+    font-weight: 600;
+}
+
+/* ---- Sections and cards ---- */
+.tl-hero { background: var(--tl-hero-bg); padding: 3rem 0 5.5rem; }
+.tl-section { padding: 5.5rem 0; }
+.tl-card {
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 1rem;
+    padding: 1.75rem;
+}
+.tl-card-dark { background: var(--tl-navy); border-color: var(--tl-navy); color: #CBD5E1; }
+.tl-card-dark h3 { color: #fff; }
+.tl-card-dark .tl-icon { color: #FB923C; }
+.tl-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: .75rem;
+    border-radius: .6rem;
+    background: var(--tl-chip-tint);
+    color: var(--tl-accent-text);
+    font-weight: 700;
+}
+.tl-icon { width: 28px; height: 28px; color: #EA580C; }
+.tl-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 3rem;
+    border-radius: 1.25rem;
+    background: var(--tl-navy);
+    color: #CBD5E1;
+}
+
+/* ---- Scanning slip ---- */
+.tl-scan-stage { position: relative; width: 340px; max-width: 100%; height: 420px; }
+.tl-slip {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 240px;
+    padding: 22px 20px 28px;
+    overflow: hidden;
+    background: #FBFAF6;
+    color: #1F2937;
+    font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    transform: rotate(-3deg);
+    box-shadow: var(--tl-shadow);
+}
+.tl-slip > div { white-space: pre; }
+.tl-slip hr { margin: 8px 0; border-top: 1px dashed #9CA3AF; opacity: 1; }
+.tl-slip-title {
+    text-align: center;
+    font-family: system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+.tl-beam {
+    position: absolute;
+    left: -4%;
+    right: -4%;
+    top: -6%;
+    height: 28px;
+    background: linear-gradient(180deg,
+        rgba(249, 115, 22, 0),
+        rgba(249, 115, 22, .35) 45%,
+        rgba(249, 115, 22, .9) 50%,
+        rgba(249, 115, 22, .35) 55%,
+        rgba(249, 115, 22, 0));
+    animation: tl-scan 4s ease-in-out infinite;
+}
+.tl-chip {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 14px;
+    border: 1px solid var(--bs-border-color);
+    border-radius: .75rem;
+    background: var(--bs-body-bg);
+    box-shadow: var(--tl-shadow);
+    opacity: 0;
+    animation: tl-pop 8s ease-out infinite;
+}
+.tl-chip span { font-size: 12px; color: var(--bs-secondary-color); }
+.tl-chip strong { font-size: 16px; }
+.tl-d1 { animation-delay: .6s; }
+.tl-d2 { animation-delay: 1.4s; }
+.tl-d3 { animation-delay: 2.2s; }
+
+@keyframes tl-scan {
+    0%, 100% { top: -6%; }
+    50% { top: 100%; }
+}
+@keyframes tl-pop {
+    0%, 15% { opacity: 0; transform: translateY(8px); }
+    25%, 85% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tl-beam { animation: none; top: 40%; }
+    .tl-chip { animation: none; opacity: 1; }
+}
+
+@media (max-width: 400px) {
+    .tl-scan-stage { height: 460px; }
+    .tl-chip { right: 0 !important; }
+    .tl-d2 { top: 190px !important; }
+    .tl-d3 { top: 340px !important; }
+}

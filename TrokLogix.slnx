@@ -1,5 +1,5 @@
-<Solution>
-  <Folder Name="/src/">
-    <Project Path="src/TrokLogix.Web/TrokLogix.Web.csproj" />
+w<Solution>
+  <Folder Name="/">
+    <Project Path="/TrokLogix.Web/TrokLogix.Web.csproj" />
   </Folder>
 </Solution>

@@ -1,0 +1,165 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Fleet slip capture";
+}
+
+<section class="tl-hero">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <p class="tl-eyebrow">Fleet slip capture for South African transporters</p>
+                <h1 class="tl-display">Fuel slips, weighbridge tickets and odometers, <span class="tl-accent">captured from one photo</span></h1>
+                <p class="lead text-body-secondary my-4">Your drivers take a picture. AI reads the litres, weights and readings. You check, approve and get cost per km for every truck.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a class="btn btn-tl btn-lg" href="#">Register your company</a>
+                    <a class="btn btn-outline-secondary btn-lg" href="#how">See how it works</a>
+                </div>
+                <p class="small text-body-secondary mt-3 mb-0">Works in the phone's browser. No app to install.</p>
+            </div>
+
+            <div class="col-lg-6 d-flex justify-content-center">
+                <div class="tl-scan-stage">
+                    <div class="tl-slip" role="img" aria-label="A fuel slip being scanned">
+                        <div class="tl-slip-title">MRTS</div>
+                        <div class="text-center mb-2">TRANSACTION RECEIPT</div>
+                        <div>Slip:     S0230410</div>
+                        <div>Vehicle:  TFNPUMP1</div>
+                        <div>Notes:    LLT587NW</div>
+                        <div>Date:     25 Nov 2026 02:10</div>
+                        <div>Depot:    MRTS Diesel</div>
+                        <div>Odometer: 191431</div>
+                        <hr />
+                        <div>Diesel 50ppm</div>
+                        <div>Litres:   550.00</div>
+                        <div>Price:    R [PRICE]/L</div>
+                        <div class="fw-semibold">TOTAL:    R [TOTAL]</div>
+                        <hr />
+                        <div class="text-center">THANK YOU</div>
+                        <div class="tl-beam" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="tl-chip tl-d1" style="top:40px;right:0">
+                        <span>Litres</span><strong>550.00 L</strong>
+                    </div>
+                    <div class="tl-chip tl-d2" style="top:150px;right:16px">
+                        <span>Odometer</span><strong>191 431 km</strong>
+                    </div>
+                    <div class="tl-chip tl-d3" style="top:260px;right:4px">
+                        <span>Vehicle (from Notes)</span><strong>LLT587NW</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how" class="tl-section">
+    <div class="container">
+        <h2 class="tl-h2">How it works</h2>
+        <p class="lead text-body-secondary mb-5">Three steps from a crumpled slip to a clean report.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="tl-card h-100">
+                    <span class="tl-step">1</span>
+                    <h3 class="h5">Driver takes a photo</h3>
+                    <p class="text-body-secondary mb-0">The photo is shrunk on the phone before upload, so it works on mobile data. The location is recorded with it.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tl-card h-100">
+                    <span class="tl-step">2</span>
+                    <h3 class="h5">AI reads it, the app checks it</h3>
+                    <p class="text-body-secondary mb-0">Litres times price must equal the total, the odometer must move forward, and duplicates are flagged.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tl-card h-100">
+                    <span class="tl-step">3</span>
+                    <h3 class="h5">You review and approve</h3>
+                    <p class="text-body-secondary mb-0">The photo sits beside the form, with doubtful fields highlighted. Fix, approve, and it lands in your reports.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="types" class="tl-section bg-body-tertiary">
+    <div class="container">
+        <h2 class="tl-h2">What you can capture</h2>
+        <p class="lead text-body-secondary mb-5">Four types ready from day one. Add your own, like proof of delivery, without any code.</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-5 g-3">
+            <div class="col">
+                <div class="tl-card h-100">
+                    <svg class="tl-icon" aria-hidden="true"><use href="/icons/icons.svg#fuel-pump"></use></svg>
+                    <h3 class="h6 mt-2">Fuel slips</h3>
+                    <p class="small text-body-secondary mb-0">Litres, price, total and odometer.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tl-card h-100">
+                    <svg class="tl-icon" aria-hidden="true"><use href="/icons/icons.svg#scale"></use></svg>
+                    <h3 class="h6 mt-2">Weighbridge tickets</h3>
+                    <p class="small text-body-secondary mb-0">Gross, tare and net, checked against each other.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tl-card h-100">
+                    <svg class="tl-icon" aria-hidden="true"><use href="/icons/icons.svg#speedometer2"></use></svg>
+                    <h3 class="h6 mt-2">Odometer photos</h3>
+                    <p class="small text-body-secondary mb-0">Readings that keep km per litre honest.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tl-card h-100">
+                    <svg class="tl-icon" aria-hidden="true"><use href="/icons/icons.svg#receipt"></use></svg>
+                    <h3 class="h6 mt-2">Expense receipts</h3>
+                    <p class="small text-body-secondary mb-0">Tolls, stays, repairs, with VAT checked.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="tl-card tl-card-dark h-100">
+                    <svg class="tl-icon" aria-hidden="true"><use href="/icons/icons.svg#plus-lg"></use></svg>
+                    <h3 class="h6 mt-2">Your own types</h3>
+                    <p class="small mb-0">Proof of delivery, inspections, anything with a slip.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="tl-section">
+    <div class="container">
+        <h2 class="tl-h2 mb-5">Built for the people who check the numbers</h2>
+        <div class="row g-5">
+            <div class="col-md-6">
+                <h3 class="h5">Live processing status</h3>
+                <p class="text-body-secondary mb-0">See each slip move from uploading to ready for review, without refreshing.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="h5">Drivers and vehicles</h3>
+                <p class="text-body-secondary mb-0">Licence and disc expiry dates, fleet numbers, and registration aliases the AI can match.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="h5">Reports that add up</h3>
+                <p class="text-body-secondary mb-0">Km per litre, cost per km and spend by vehicle, built only from approved slips.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="h5">Your data stays yours</h3>
+                <p class="text-body-secondary mb-0">Each company sees only its own records. Original photos are never altered.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-5">
+    <div class="container">
+        <div class="tl-cta">
+            <div>
+                <h2 class="tl-h2 text-white mb-2">Stop typing slips into spreadsheets.</h2>
+                <p class="mb-0">Register your company and add your first truck in a few minutes.</p>
+            </div>
+            <a class="btn btn-tl btn-lg" href="#">Register your company</a>
+        </div>
+    </div>
+</section>

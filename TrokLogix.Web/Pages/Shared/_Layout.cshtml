@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>@(ViewData["Title"] is string t ? $"{t} – TrokLogix" : "TrokLogix")</title>
+    @* Follow the phone's light or dark setting. Runs before the CSS loads so there is no flash. *@
+    <script>
+        (function () {
+            var m = window.matchMedia('(prefers-color-scheme: dark)');
+            function set() { document.documentElement.setAttribute('data-bs-theme', m.matches ? 'dark' : 'light'); }
+            set();
+            m.addEventListener('change', set);
+        })();
+    </script>
+    <link rel="icon" href="~/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="~/lib/bootstrap/bootstrap.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @await RenderSectionAsync("Head", required: false)
+</head>
+<body>
+    <a class="visually-hidden-focusable" href="#main">Skip to content</a>
+
+    <header class="tl-header">
+        <nav class="navbar navbar-expand-md" aria-label="Main">
+            <div class="container">
+                <a class="navbar-brand tl-brand" asp-page="/Index">
+                    <svg class="tl-mark" aria-hidden="true"><use href="/icons/icons.svg#tl-mark"></use></svg>
+                    <span>Trok<span class="tl-accent">Logix</span></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-2">
+                        <li class="nav-item"><a class="nav-link" href="/#how">How it works</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#types">What you can capture</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/#features">Features</a></li>
+                        @* Log in and Register become real pages in Part 1. *@
+                        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Log in</a></li>
+                        <li class="nav-item"><a class="btn btn-tl ms-md-2" href="#">Register company</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        @RenderBody()
+    </main>
+
+    <footer class="tl-footer border-top">
+        <div class="container d-flex flex-wrap justify-content-between gap-3 py-4 small text-body-secondary">
+            <span>&copy; @DateTime.Now.Year TrokLogix</span>
+            <div class="d-flex flex-wrap gap-4">
+                <a href="#">Privacy (POPIA)</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
